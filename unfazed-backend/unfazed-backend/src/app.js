@@ -7,5 +7,8 @@ app.use(express.json());
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/therapists', require('./routes/therapistRoutes'));
+app.use('/api/clients', require('./routes/clientRoutes'));
+app.use('/api/notes', require('./routes/noteRoutes'));
+app.use('/api/portal', require('./routes/portalRoutes'));
 app.use(errorHandler);
 module.exports = app;
