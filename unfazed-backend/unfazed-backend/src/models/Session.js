@@ -7,4 +7,6 @@ const schema = new mongoose.Schema({
   status: { type: String, enum: ['scheduled', 'completed', 'no_show', 'cancelled'], default: 'scheduled' },
   amount: { type: Number, default: 0 }
 }, { timestamps: true });
+// DB-level double-booking guard: one scheduled session per therapist per start time
+schema.index({ therapist_id: 1, start: 1 }, { unique: true, partialFilterExpression: { status: 'scheduled' } });
 module.exports = mongoose.model('Session', schema);

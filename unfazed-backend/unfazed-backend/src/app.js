@@ -10,5 +10,6 @@ app.use('/api/therapists', require('./routes/therapistRoutes'));
 app.use('/api/clients', require('./routes/clientRoutes'));
 app.use('/api/notes', require('./routes/noteRoutes'));
 app.use('/api/portal', require('./routes/portalRoutes'));
+app.use('/api/scheduling', require('./routes/schedulingRoutes'));
 app.use(errorHandler);
 module.exports = app;

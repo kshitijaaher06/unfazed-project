@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import api from '../../api/axiosInstance';
 
 // Public branded page: /:slug  (hero, about, specializations, service cards)
@@ -35,7 +35,7 @@ export default function ClientPortal() {
       <section className="bg-blue-600 text-white text-center py-20">
         <h1 className="text-4xl font-bold">{t.name}</h1>
         <p className="mt-2 opacity-90">unfazed.in/{t.slug}</p>
-        <button className="mt-6 bg-white text-blue-600 px-6 py-2 rounded-full font-semibold">Book a session</button>
+        <Link to={`/book/${t.slug}`} className="inline-block mt-6 bg-white text-blue-600 px-6 py-2 rounded-full font-semibold">Book a session</Link>
       </section>
       <div className="max-w-3xl mx-auto p-6 space-y-8">
         <section>
