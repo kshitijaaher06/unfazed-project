@@ -31,7 +31,8 @@ export default function Dashboard() {
         <button onClick={() => { logout(); nav('/login'); }} className="text-sm text-red-600">Logout</button>
       </div>
       <p className="mb-4">Your public link: <Link className="text-blue-600 underline" to={`/${user.slug}`}>unfazed.in/{user.slug}</Link></p>
-      <Link to="/notes" className="inline-block mb-4 mr-4 text-blue-600 underline">Clients and Notes</Link>
+      <Link to="/clients" className="inline-block mb-4 mr-4 text-blue-600 underline">Clients</Link>
+      <Link to="/notes" className="inline-block mb-4 mr-4 text-blue-600 underline">Notes</Link>
       <Link to="/schedule" className="inline-block mb-4 text-blue-600 underline">Schedule</Link>
       <form onSubmit={save} className="bg-white p-6 rounded-xl shadow space-y-4">
         <input className="w-full border p-2 rounded" placeholder="Name" value={form.name}
